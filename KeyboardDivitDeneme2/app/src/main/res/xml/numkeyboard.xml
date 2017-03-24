@@ -22,7 +22,7 @@
     <Row android:rowEdgeFlags="bottom">
         <Key android:codes="-5" android:keyLabel="SİL" android:keyWidth="33%p" android:isRepeatable="true"
             android:keyEdgeFlags="left"/>
-        <Key android:codes="55" android:keyLabel="0" android:keyWidth="34%p"/>
+        <Key android:codes="48" android:keyLabel="0" android:keyWidth="34%p"/>
         <Key android:codes="-4" android:keyLabel="GİRİŞ" android:keyWidth="33%p" android:keyEdgeFlags="right"/>
 
     </Row>

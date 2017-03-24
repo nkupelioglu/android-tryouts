@@ -19,6 +19,7 @@ public class SimpleIME extends InputMethodService
     private Keyboard keyboardQwerty;
     private Keyboard keyboardNum;
     private Keyboard CurrentKeyboard;
+    private Keyboard keyboardCapsed;
 
     private boolean caps = false;
 
@@ -55,9 +56,11 @@ public class SimpleIME extends InputMethodService
             keyboardQwerty = new Keyboard(this, R.xml.turkceqwerty);
             keyboardPlate = new Keyboard(this, R.xml.qwerty);
             keyboardNum = new Keyboard(this, R.xml.numkeyboard);
+            keyboardCapsed = new Keyboard(this, R.xml.capsedkeyboard);
             kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
             kv.setKeyboard(keyboardQwerty);
             kv.setOnKeyboardActionListener(this);
+            kv.setPreviewEnabled(false);
             return kv;
     }
 
@@ -111,6 +114,7 @@ public class SimpleIME extends InputMethodService
         keyboardQwerty = new Keyboard(this, R.xml.turkceqwerty);
         keyboardPlate = new Keyboard(this, R.xml.qwerty);
         keyboardNum = new Keyboard(this, R.xml.numkeyboard);
+        keyboardCapsed = new Keyboard(this, R.xml.capsedkeyboard);
     }
 
 
@@ -127,6 +131,7 @@ public class SimpleIME extends InputMethodService
 
             case InputType.TYPE_CLASS_PHONE:
                 CurrentKeyboard = keyboardNum;
+                caps = true;
                 break;
 
             case InputType.TYPE_CLASS_TEXT:
